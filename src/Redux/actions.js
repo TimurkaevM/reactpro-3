@@ -4,7 +4,7 @@ export const loadPhotos = () => {
             type: "photos/load/start",
         })
 
-        fetch("http://jsonplaceholder.typicode.com./photos/?_limit=10")
+        fetch("http://jsonplaceholder.typicode.com./photos/?_limit=20")
             .then(response => response.json())
             .then(json => {
                 dispatch({

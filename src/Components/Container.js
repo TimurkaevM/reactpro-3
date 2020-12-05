@@ -17,7 +17,7 @@ function Container(props) {
 
     return (
         <div className="container">
-            {loading ? "Идет..." : (
+            {loading ? (<div className="load">Идет loading...</div>) : (
                 photos.map((photo) => {
                     return (<Card key={photo.id} photo={photo} users={users} />);
                 })
