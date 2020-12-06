@@ -26,7 +26,7 @@ function Buttons(props) {
             <div
                 onClick={() => handleDelete(props.photo.id)}
                 className="btn__right"
-                disabled={props.photo.favorite}>
+                disabled={props.photo.deleting}>
                     <i className="fa fa-times" aria-hidden="true"></i>
             </div>
         </div>

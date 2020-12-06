@@ -39,7 +39,7 @@ export const removeCard = (id) => {
             payload: id,
         })
 
-        fetch(`http://jsonplaceholder.typicode.com./photos/?_limit=10/${id}`, {
+        fetch(`https://jsonplaceholder.typicode.com./photos/?_limit=20/${id}`, {
             method: "DELETE"
         })
             .then(response => response.json())
@@ -59,7 +59,7 @@ export const makeFavorite = (id) => {
             payload: id,
         })
 
-        fetch(`http://jsonplaceholder.typicode.com./photos/?_limit=10/${id}`, {
+        fetch(`https://jsonplaceholder.typicode.com./photos/?_limit=20/${id}`, {
             method: "PATCH",
             body: JSON.stringify({
                 title: "selected"
