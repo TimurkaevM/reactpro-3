@@ -5,10 +5,11 @@ import {loadPhotos, loadUsers} from "../Redux/actions";
 
 function Container(props) {
     const photos = useSelector(state => state.photos);
-    const loading = useSelector(state => state.photosLoad);
+    const users = useSelector(state => state.users);
+    const photosLoad = useSelector(state => state.photosLoad);
+    const usersLoad = useSelector(state => state.usersLoad);
     const dispatch = useDispatch();
 
-    const users = useSelector(state => state.users);
 
     useEffect(() => {
         dispatch(loadUsers());
@@ -17,7 +18,7 @@ function Container(props) {
 
     return (
         <div className="container">
-            {loading ? (<div className="load">Идет loading...</div>) : (
+            {(photosLoad || usersLoad) ? (<div className="load">Идет loading...</div>) : (
                 photos.map((photo) => {
                     return (<Card key={photo.id} photo={photo} users={users} />);
                 })
